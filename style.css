@@ -124,7 +124,7 @@
 }
 
 
-  /* header */
+  /* HEADER */
   .header{
     background:transparent;
     position:fixed;
@@ -166,6 +166,44 @@
   .header__nav ul li:hover a{
     color:#fb4d3d;
   }
+  .burgir__menu{
+    display:flex;
+    flex-direction:column;
+    gap:.3rem
+  }
+
+  .burgir__menu span{
+    width:2.5rem;
+    height:.3rem;
+    background-color:#ffffff;
+    display:block;
+    border-radius:5rem;
+    transition:.5s ease
+  }
+  .burgir__menu.open span:first-child{
+    transition:.5 ease;
+    transform:translate(0,10px) rotate(225deg);
+
+  }
+
+  .burgir__menu.open span:nth-child(2){
+    opacity:0;
+    transition:.5 ease
+  }
+  .burgir__menu.open span:last-child{
+    transition:.5 ease;
+    transform:translate(0,-2.5px) rotate(-225deg);
+  }
+
+  @media screen and (max-width:560px){
+    .header{
+      background:pink;
+      margin-top:0;
+    }
+    .header__nav{
+      display:none;
+    }
+  }
 
   /* BANNER */
   .banner{
@@ -197,16 +235,17 @@
 .services{
   padding:5rem 0;
   background:#ffffff;
+  
 }
-
+.services__title{
+  margin-bottom:8rem;
+}
 .services__title h2{
   font-size:5rem;
   font-weight:600;
   color:#fb4d3d;
 }
-.services__title p{
-  margin-bottom: 10rem
-}
+
 .services__wrapper{
   display:grid;
   grid-template-columns:1fr 1fr 1fr;
@@ -218,7 +257,10 @@
   height:450px;
   border-top-left-radius:2rem;
   border-top-right-radius:2rem;
+  position:relative;
+  transition: 0.5s ease;
 }
+
 .services__card h4{
   text-align:center;
   font-size:2.5rem;
@@ -235,13 +277,25 @@
   color:#fb4d3d;
   border-top:2px solid #fb4d3d;
   padding: 2rem 0;
-  display:flex;
-  margin-top:10rem;
-  justify-content:center;
-  font-weight:500
-
+  font-weight:500;
+  position:absolute;
+  bottom:0;
+  left:10%;
+  width:80%;
+  text-align:center;
 }
 
+/* SERVICES BTN */
+.services__card:hover{
+  scale:1.1;
+  transition:all 0.5s ease;
+}
+.services__card:hover a{
+  background-color: #fb4d3d;
+  color:#ffffff;
+  left:0;
+  width:100%
+}
 /* REPEATABLE PATTERNS */
 .btn{
   display:inline-block;
