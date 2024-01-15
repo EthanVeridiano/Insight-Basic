@@ -315,7 +315,7 @@
 .services__card{
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
   padding: 3rem 3rem 0rem 3rem;
-  height:450px;
+  height:500px;
   border-top-left-radius:2rem;
   border-top-right-radius:2rem;
   position:relative;
@@ -345,21 +345,7 @@
   width:80%;
   text-align:center;
 }
-@media screen and (max-width:555px){
-  .services__title{
-    display:flex;
-    flex-direction:column;
-    text-align:center
-  }
-  
 
-  .services__wrapper{
-    display:flex;
-    flex-direction:column;
-    margin:4rem;
-    gap:5rem
-  }
-}
 
 /* SERVICES BTN */
 .services__card:hover{
@@ -382,6 +368,9 @@
 }
 .project__item{
   position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:center;
 }
 .project__overlay{
   position:absolute;
@@ -391,7 +380,73 @@
   height:100%;
   background-color:rgba(0%,0%,0%,.5);
   display:block;
+  transition: .5s ease;
+  
 }
+.project__text{
+  background:rgb(0%,0%,0%,.5);
+  position:absolute;
+  max-width:0rem;
+  overflow:hidden;
+  color:#ffffff;
+  display:flex;
+  flex-direction:column;
+  gap:3rem;
+  padding:0rem;
+
+}
+.project__item:hover .project__text{
+  max-width:40rem;
+  padding:2rem;
+}
+.project__text h3{
+  font-size:3.5rem;
+  font-weight:600;
+  text-align:center;
+
+}
+.project__text p{
+  text-align:justify;
+}
+.project__text a{
+  text-align:center;
+  max-width:20rem;
+  margin:0 auto;
+}
+.project__item:hover .project__overlay{
+  scale:0;
+  
+}
+@media screen and (max-width:560px){
+  .services__title{
+    display:flex;
+    flex-direction:column;
+    text-align:center
+  }
+  
+
+  .services__wrapper{
+    display:flex;
+    flex-direction:column;
+    margin:4rem;
+    gap:5rem;
+  }
+
+  .project__wrapper{
+    display:flex;
+    flex-direction:column;
+    gap:5rem
+  }
+  .project__overlay{
+    background:rgb(0%,0%,0%,0);
+}
+.project__text{
+  max-width:40rem;
+  padding:2rem;
+}
+
+}
+
 /* REPEATABLE PATTERNS */
 .btn{
   display:inline-block;
